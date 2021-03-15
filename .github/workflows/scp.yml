@@ -5,7 +5,7 @@ on:
     branches:
       - development
 jobs:
-  build:
+  copy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -22,7 +22,7 @@ jobs:
         host: 34.255.43.236
         username: ec2-user
         port: 22
-        source: "./sql"
+        source: "./sql/"
         target: "/home/ec2-user/sql-scripts/"
         key: ${{ SECRETS.SERVER_ACCESS_PRIVATE_KEY }}
         overwrite: true
