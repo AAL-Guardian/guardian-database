@@ -25,5 +25,5 @@ jobs:
         source: "./sql/"
         target: "/home/ec2-user/sql-scripts/"
         key: ${{ SECRETS.SERVER_ACCESS_PRIVATE_KEY }}
-        strip_components: 1
+        strip_components: 2
         overwrite: true
