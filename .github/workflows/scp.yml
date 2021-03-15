@@ -1,4 +1,4 @@
-name: Node CI
+name: SCP Deployment
 
 on: 
   push:
@@ -14,8 +14,6 @@ jobs:
       run: |
         git lfs fetch
         git lfs checkout
-        npm i
-        npx ng build --prod
       env:
         CI: true
     - name: copy file via ssh key
