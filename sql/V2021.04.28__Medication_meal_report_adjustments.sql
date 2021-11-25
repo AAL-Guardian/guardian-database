@@ -3,7 +3,7 @@
  * Author:  moverkamp
  * Created: Apr 28, 2021
  */
-
+ 
 -- New report types with questions and options.
 INSERT INTO `report_type` (`id`, `name`, `description`, `sort_order`, `module_id`) VALUES
   (3, 'MEDICATION', 'Medication (self)reports', 3, 1),

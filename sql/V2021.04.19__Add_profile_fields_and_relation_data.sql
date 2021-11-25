@@ -2,7 +2,7 @@
  * Author:  moverkamp
  * Created: Apr 19, 2021
  */
-
+ 
 -- Note that the birth_day column is truncated (from datetime to date).
 -- Loosing the time part creates some warnings during the update, those are fine.
 ALTER TABLE `persons`
