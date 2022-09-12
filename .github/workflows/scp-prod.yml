@@ -1,0 +1,29 @@
+name: SCP Deployment
+
+on: 
+  push:
+    branches:
+      - production
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Fetch also lfs
+      run: |
+        git lfs fetch
+        git lfs checkout
+      env:
+        CI: true
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: 34.255.43.236
+        username: ec2-user
+        port: 22
+        source: "./sql/"
+        target: "/home/ec2-user/sql-scripts-prod/"
+        key: ${{ SECRETS.SERVER_ACCESS_PRIVATE_KEY }}
+        strip_components: 2
+        overwrite: true
